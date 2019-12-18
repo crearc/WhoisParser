@@ -4,7 +4,8 @@ namespace Novutec\WhoisParser\Templates;
 
 use Novutec\WhoisParser\Templates\Type\Regex;
 
-class Venez extends Regex {
+class Venez extends Regex
+{
 
     protected $convertFromHtml = true;
 
@@ -30,8 +31,7 @@ class Venez extends Regex {
         3 => array(
             '/<b>(.*?)<\/b>/i' => 'changed',
         ),
-        4 => array(
-        ),
+        4 => array(),
         5 => array(
             '/<b>(.*?)<\/b>/i' => 'contacts:owner:name',
         ),
@@ -69,7 +69,7 @@ class Venez extends Regex {
     }
 
 
-    public function translateRawData($rawdata)
+    public function translateRawData($rawdata, $config)
     {
         return utf8_encode($rawdata);
     }
